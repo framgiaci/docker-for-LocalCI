@@ -39,8 +39,7 @@ RUN apt-get update && apt-get install -y --force-yes \
         xz-utils \
         curl \
         git
-COPY commands.sh /scripts/commands.sh
-RUN ["chmod", "+x", "/scripts/commands.sh"]
+
 # remove load xdebug extension (only load on phpunit command)
 RUN sed -i 's/^/;/g' /etc/php/7.1/cli/conf.d/20-xdebug.ini
 
@@ -84,5 +83,4 @@ RUN cd ~ \
 RUN curl -o /usr/bin/framgia-ci https://raw.githubusercontent.com/framgiaci/framgia-ci-cli/master/dist/framgia-ci \
     && chmod +x /usr/bin/framgia-ci
 
-ENTRYPOINT ["/scripts/commands.sh"]
 WORKDIR /workdir
