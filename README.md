@@ -10,7 +10,7 @@ This test to make sure your pull request passed framgiaCI before you send a pull
 2. Move into your project and run:
     ```bash
     // For run framgia-ci CLI tool - make sure you have framgia-ci.yml at current folder
-    docker run -v ${PWD}:/workdir framgiaciteam/phptestandfixer
+    docker run -v ${PWD}:/workdir framgiaciteam/phptestandfixer framgia-ci run --local
     
     //For only check phpcs with framgia coding convention
     docker run -v ${PWD}:/workdir framgiaciteam/phptestandfixer phpcs --standard=Framgia app
